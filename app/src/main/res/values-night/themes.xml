@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.KonaBess" parent="android:Theme.Material">
+    <style name="Theme.SDPerf" parent="Theme.MaterialComponents.DayNight.NoActionBar">
     </style>
 </resources>

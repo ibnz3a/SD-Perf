@@ -1,4 +1,4 @@
-package xzr.konabess;
+package mk.sdperf;
 
 import android.Manifest;
 import android.app.Activity;
@@ -16,10 +16,21 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import xzr.konabess.adapters.ParamAdapter;
-import xzr.konabess.utils.DialogUtil;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-public class MainActivity extends Activity {
+import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import mk.sdperf.adapters.ParamAdapter;
+import mk.sdperf.ui.HomeFragment;
+import mk.sdperf.ui.SettingsFragment;
+import mk.sdperf.ui.TuningFragment;
+import mk.sdperf.ui.TweaksFragment;
+import mk.sdperf.utils.DialogUtil;
+
+public class MainActivity extends AppCompatActivity {
     AlertDialog waiting;
     boolean cross_device_debug = false;
     onBackPressedListener onBackPressedListener = null;
@@ -27,14 +38,46 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_main);
+        
         ChipInfo.which = ChipInfo.type.unknown;
 
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
         try {
-            setTitle(getTitle() + " " + getPackageManager().getPackageInfo(getPackageName(), 0).versionName);
+            toolbar.setTitle(getString(R.string.app_name));
         } catch (PackageManager.NameNotFoundException ignored) {
         }
+        toolbar.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.action_about) {
+                startActivity(new Intent(this, AboutActivity.class));
+                return true;
+            }
+            return false;
+        });
 
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
+        bottomNav.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.nav_home) {
+                showFragment(new HomeFragment());
+                return true;
+            } else if (id == R.id.nav_tuning) {
+                showFragment(new TuningFragment());
+                return true;
+            } else if (id == R.id.nav_tweaks) {
+                showFragment(new TweaksFragment());
+                return true;
+            } else if (id == R.id.nav_settings) {
+                showFragment(new SettingsFragment());
+                return true;
+            }
+            return false;
+        });
+        
+        if (savedInstanceState == null) {
+            showFragment(new HomeFragment());
+        }
+        
         try {
             if (!cross_device_debug)
                 KonaBessCore.cleanEnv(this);
