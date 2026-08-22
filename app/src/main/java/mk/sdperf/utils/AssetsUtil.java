@@ -1,4 +1,4 @@
-package xzr.konabess.utils;
+package mk.sdperf.utils;
 
 import android.content.Context;
 
