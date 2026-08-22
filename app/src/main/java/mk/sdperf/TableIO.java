@@ -1,4 +1,4 @@
-package xzr.konabess;
+package mk.sdperf;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -23,9 +23,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
-import xzr.konabess.adapters.ParamAdapter;
-import xzr.konabess.utils.DialogUtil;
-import xzr.konabess.utils.GzipUtils;
+import mk.sdperf.adapters.ParamAdapter;
+import mk.sdperf.utils.DialogUtil;
+import mk.sdperf.utils.GzipUtils;
 
 public class TableIO {
     private static class json_keys {

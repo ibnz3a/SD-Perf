@@ -3,8 +3,8 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion 34
+    buildToolsVersion "34.0.0"
 
     defaultConfig {
         applicationId "mk.sdperf"
@@ -24,9 +24,15 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    namespace 'xzr.konabess'
+    namespace 'mk.sdperf'
     lint {
         abortOnError false
         checkReleaseBuilds false
     }
+}
+
+dependencies {
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.fragment:fragment:1.4.1'
 }

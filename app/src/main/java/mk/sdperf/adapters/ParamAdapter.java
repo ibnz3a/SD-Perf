@@ -1,4 +1,4 @@
-package xzr.konabess.adapters;
+package mk.sdperfadapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import xzr.konabess.R;
+import mk.sdperf.R;
 
 public class ParamAdapter extends BaseAdapter {
     public static class item {
