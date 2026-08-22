@@ -7,11 +7,11 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "xzr.konabess"
+        applicationId "mk.sdperf"
         minSdkVersion 28
         targetSdkVersion 28
-        versionCode 28
-        versionName "0.26 beta"
+        versionCode 10
+        versionName "1.0 beta"
     }
 
     buildTypes {
