@@ -1,4 +1,4 @@
-package mk.sdperf.ui;
+package xzr.konabess.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import mk.sdperf.R;
+import xzr.konabess.R;
 
 public class TuningFragment extends Fragment {
 
