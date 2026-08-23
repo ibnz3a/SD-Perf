@@ -1,4 +1,4 @@
-package mk.sdperf;
+package xzr.konabess;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;

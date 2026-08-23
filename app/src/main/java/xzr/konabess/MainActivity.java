@@ -1,4 +1,4 @@
-package mk.sdperf;
+package xzr.konabess;
 
 import android.Manifest;
 import android.app.Activity;
@@ -23,12 +23,12 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import mk.sdperf.adapters.ParamAdapter;
-import mk.sdperf.ui.HomeFragment;
-import mk.sdperf.ui.SettingsFragment;
-import mk.sdperf.ui.TuningFragment;
-import mk.sdperf.ui.TweaksFragment;
-import mk.sdperf.utils.DialogUtil;
+import xzr.konabess.adapters.ParamAdapter;
+import xzr.konabess.ui.HomeFragment;
+import xzr.konabess.ui.SettingsFragment;
+import xzr.konabess.ui.TuningFragment;
+import xzr.konabess.ui.TweaksFragment;
+import xzr.konabess.utils.DialogUtil;
 
 public class MainActivity extends AppCompatActivity {
     AlertDialog waiting;

@@ -1,4 +1,4 @@
-package mk.sdperf.utils;
+package xzr.konabess.utils;
 
 public class DtsHelper {
     public static boolean shouldUseHex(String line) {

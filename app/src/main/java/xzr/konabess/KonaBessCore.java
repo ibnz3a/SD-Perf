@@ -1,4 +1,4 @@
-package mk.sdperf;
+package xzr.konabess;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
-import mk.sdperf.utils.AssetsUtil;
+import xzr.konabess.utils.AssetsUtil;
 
 public class KonaBessCore {
     public static String dts_path;

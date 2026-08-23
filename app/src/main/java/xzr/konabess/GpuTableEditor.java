@@ -1,4 +1,4 @@
-package mk.sdperf;
+package xzr.konabess;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -23,9 +23,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import mk.sdperf.adapters.ParamAdapter;
-import mk.sdperf.utils.DialogUtil;
-import mk.sdperf.utils.DtsHelper;
+import xzr.konabess.adapters.ParamAdapter;
+import xzr.konabess.utils.DialogUtil;
+import xzr.konabess.utils.DtsHelper;
 
 public class GpuTableEditor {
     private static int bin_position;

@@ -1,4 +1,4 @@
-package mk.sdperf.utils;
+package xzr.konabess.utils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -8,7 +8,7 @@ import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import mk.sdperf.R;
+import xzr.konabess.R;
 
 public class DialogUtil {
     public static void showError(Activity activity, String text) {

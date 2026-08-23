@@ -1,4 +1,4 @@
-package mk.sdperf.utils;
+package xzr.konabess.utils;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
