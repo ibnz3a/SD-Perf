@@ -18,21 +18,8 @@ import java.util.ArrayList;
 
 import xzr.konabess.adapters.ParamAdapter;
 import xzr.konabess.utils.DialogUtil;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import xzr.konabess.adapters.ParamAdapter;
-import xzr.konabess.ui.HomeFragment;
-import xzr.konabess.ui.SettingsFragment;
-import xzr.konabess.ui.TuningFragment;
-import xzr.konabess.ui.TweaksFragment;
-import xzr.konabess.utils.DialogUtil;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     AlertDialog waiting;
     boolean cross_device_debug = false;
     onBackPressedListener onBackPressedListener = null;
@@ -40,46 +27,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        
+
         ChipInfo.which = ChipInfo.type.unknown;
 
-        MaterialToolbar toolbar = findViewById(R.id.toolbar);
         try {
-            toolbar.setTitle(getString(R.string.app_name));
+            setTitle(getTitle() + " " + getPackageManager().getPackageInfo(getPackageName(), 0).versionName);
         } catch (PackageManager.NameNotFoundException ignored) {
         }
-        toolbar.setOnMenuItemClickListener(item -> {
-            if (item.getItemId() == R.id.action_about) {
-                startActivity(new Intent(this, AboutActivity.class));
-                return true;
-            }
-            return false;
-        });
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
-        bottomNav.setOnItemSelectedListener(item -> {
-            int id = item.getItemId();
-            if (id == R.id.nav_home) {
-                showFragment(new HomeFragment());
-                return true;
-            } else if (id == R.id.nav_tuning) {
-                showFragment(new TuningFragment());
-                return true;
-            } else if (id == R.id.nav_tweaks) {
-                showFragment(new TweaksFragment());
-                return true;
-            } else if (id == R.id.nav_settings) {
-                showFragment(new SettingsFragment());
-                return true;
-            }
-            return false;
-        });
-        
-        if (savedInstanceState == null) {
-            showFragment(new HomeFragment());
-        }
-        
         try {
             if (!cross_device_debug)
                 KonaBessCore.cleanEnv(this);
