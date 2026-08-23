@@ -367,9 +367,13 @@ public class MainActivity extends Activity {
             }
 
             runOnUiThread(() -> {
-                if (KonaBessCore.dtbs.size() == 0) {
-                    DialogUtil.showError(MainActivity.this, R.string.incompatible_device);
-                    return;
+    if (KonaBessCore.dtbs.size() == 0) {
+        // TEMPORARY BYPASS - for UI testing only
+        KonaBessCore.dtb fake = new KonaBessCore.dtb();
+        fake.id = 0;
+        fake.type = xzr.konabess.ChipInfo.type.kona;
+        KonaBessCore.dtbs.add(fake);
+    }
                 }
                 if (KonaBessCore.dtbs.size() == 1) {
                     KonaBessCore.chooseTarget(KonaBessCore.dtbs.get(0), MainActivity.this);
