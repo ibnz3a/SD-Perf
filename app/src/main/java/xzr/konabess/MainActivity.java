@@ -374,7 +374,7 @@ public class MainActivity extends Activity {
         fake.type = xzr.konabess.ChipInfo.type.kona;
         KonaBessCore.dtbs.add(fake);
     }
-                }
+                
                 if (KonaBessCore.dtbs.size() == 1) {
                     KonaBessCore.chooseTarget(KonaBessCore.dtbs.get(0), MainActivity.this);
                     showMainView();
